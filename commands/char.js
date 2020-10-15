@@ -24,13 +24,19 @@ module.exports.run = async (client, message, args) => {
     const XPMAXLEVEL = db.get(user.id).find({id:user.id}).value().xpMaxLevel;
     const VIDA = db.get(user.id).find({id:user.id}).value().vidaAtual;
     const VIDAMAX = db.get(user.id).find({id:user.id}).value().maxVida;
-    const DEF = db.get(user.id).find({id:user.id}).value().armo;
+    const DEF = db.get(user.id).find({id:user.id}).value().def;
     const ATK = db.get(user.id).find({id:user.id}).value().atk;
     const MANA = db.get(user.id).find({id:user.id}).value().mana;
     const MAXMANA = db.get(user.id).find({id:user.id}).value().maxMana;
     const CLASSE = db.get(user.id).find({id:user.id}).value().classe;
     const RACA = db.get(user.id).find({id:user.id}).value().raca;
     const ORIGEM = db.get(user.id).find({id:user.id}).value().origem;
+    const FOR = db.get(user.id).find({id:user.id}).value().foc;
+    const DES = db.get(user.id).find({id:user.id}).value().des;
+    const COS = db.get(user.id).find({id:user.id}).value().cos;
+    const INT = db.get(user.id).find({id:user.id}).value().int;
+    const SAB = db.get(user.id).find({id:user.id}).value().sab;
+    const CAR = db.get(user.id).find({id:user.id}).value().car;
 
 
     const CONFIGUIVIDA = "  :heart: " + VIDA + " | " + VIDAMAX;
@@ -46,12 +52,12 @@ module.exports.run = async (client, message, args) => {
       .addField('CLASSE', CLASSE, true)
       .addField('ORIGEM', ORIGEM, true)
       .addField('\u200b', '===========================')
-      .addField('FOR :muscle_tone3: ', ATK, true)
-      .addField('DES :leg_tone3: ', ATK, true)
-      .addField('SAB :book: ', ATK, true)
-      .addField('COS :heartbeat: ',ATK, true)
-      .addField('INT :writing_hand_tone3: ', DEF, true)
-      .addField('CAR :speaking_head: ', DEF, true)
+      .addField('FOR :muscle_tone3: ', FOR, true)
+      .addField('DES :leg_tone3: ', DES, true)
+      .addField('SAB :book: ', SAB, true)
+      .addField('COS :heartbeat: ',COS, true)
+      .addField('INT :writing_hand_tone3: ', INT, true)
+      .addField('CAR :speaking_head: ', CAR, true)
       .addField('\u200b', '===========================')
       .addField('VIDA', CONFIGUIVIDA, true)
       .addField('MANA', CONFIGUIMANA, true)
@@ -71,18 +77,24 @@ module.exports.run = async (client, message, args) => {
     const XPMAXLEVEL = db.get(message.author.id).find({id:message.author.id}).value().xpMaxLevel;
     const VIDA = db.get(message.author.id).find({id:message.author.id}).value().vidaAtual;
     const VIDAMAX = db.get(message.author.id).find({id:message.author.id}).value().maxVida;
-    const DEF = db.get(message.author.id).find({id:message.author.id}).value().armo;
+    const DEF = db.get(message.author.id).find({id:message.author.id}).value().def;
     const ATK = db.get(message.author.id).find({id:message.author.id}).value().atk;
     const MANA = db.get(message.author.id).find({id:message.author.id}).value().mana;
     const MAXMANA = db.get(message.author.id).find({id:message.author.id}).value().maxMana;
     const CLASSE = db.get(message.author.id).find({id:message.author.id}).value().classe;
     const RACA = db.get(message.author.id).find({id:message.author.id}).value().raca;
     const ORIGEM = db.get(message.author.id).find({id:message.author.id}).value().origem;
-
+    const FOR = db.get(user.id).find({id:user.id}).value().foc;
+    const DES = db.get(user.id).find({id:user.id}).value().des;
+    const COS = db.get(user.id).find({id:user.id}).value().cos;
+    const INT = db.get(user.id).find({id:user.id}).value().int;
+    const SAB = db.get(user.id).find({id:user.id}).value().sab;
+    const CAR = db.get(user.id).find({id:user.id}).value().car;
 
     const CONFIGUIVIDA = "  :heart: " + VIDA + " | " + VIDAMAX;
     const CONFIGUIMANA = "  :cyclone: " + MANA + " | " + MAXMANA;
     const CONFIGUIATKDEF = "  :crossed_swords:  " + ATK + " | " + DEF + " :shield: ";
+    
     const charSet = new Discord.MessageEmbed()
       .setColor('#0099ff')
       .setTitle(NAME)
