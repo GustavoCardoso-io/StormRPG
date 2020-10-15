@@ -1,0 +1,75 @@
+{
+  "638065252046733351": [
+    {
+      "id": "638065252046733351",
+      "nick": "uSt",
+      "avatar": "https://cdn.discordapp.com/avatars/638065252046733351/0919fcd354f99c93cd20e70fe347588d.webp",
+      "level": 1,
+      "xpatual": 0,
+      "xpMaxLevel": 1000,
+      "vidaAtual": 0,
+      "maxVida": 0,
+      "mana": 0,
+      "maxMana": 0,
+      "armo": 0,
+      "atk": 0,
+      "raca": "default",
+      "classe": "default",
+      "origem": "default"
+    }
+  ],
+  "402274860119752713": [
+    {
+      "id": "402274860119752713",
+      "nick": "DJKings",
+      "avatar": "https://cdn.discordapp.com/avatars/402274860119752713/c13077809b0de4e21923bf2b038a91ae.webp",
+      "level": 1,
+      "xpatual": 0,
+      "xpMaxLevel": 1000,
+      "vidaAtual": 100,
+      "maxVida": 100,
+      "mana": 1,
+      "maxMana": 3,
+      "armo": 2,
+      "atk": 3
+    }
+  ],
+  "383812290572451840": [
+    {
+      "id": "383812290572451840",
+      "nick": "uSt",
+      "avatar": "https://cdn.discordapp.com/avatars/383812290572451840/c9427f958a03c78bb366ff4b0cb80d1e.webp",
+      "level": 1,
+      "xpatual": 0,
+      "xpMaxLevel": 1000,
+      "vidaAtual": 0,
+      "maxVida": 0,
+      "mana": 0,
+      "maxMana": 0,
+      "armo": 0,
+      "atk": 0,
+      "raca": "default",
+      "classe": "default",
+      "origem": "default"
+    }
+  ],
+  "144247191677042688": [
+    {
+      "id": "144247191677042688",
+      "nick": "Oglobo",
+      "avatar": "https://cdn.discordapp.com/avatars/144247191677042688/c5bd5898920b902727d38faa9de89fba.webp",
+      "level": 1,
+      "xpatual": 0,
+      "xpMaxLevel": 1000,
+      "vidaAtual": 0,
+      "maxVida": 0,
+      "mana": 0,
+      "maxMana": 0,
+      "armo": 0,
+      "atk": 0,
+      "raca": "default",
+      "classe": "default",
+      "origem": "default"
+    }
+  ]
+}
