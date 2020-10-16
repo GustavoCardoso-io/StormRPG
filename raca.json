@@ -1,0 +1,50 @@
+{
+   "0": [
+    {
+      "id": "0",
+      "nome": "HUMANO",
+      "def": 2,
+      "atk": 4,
+      "foc": 2,
+      "sab": 2,
+      "int": 2,
+      "des": 0,
+      "cos": 0,
+      "car": 0,
+      "mana": 3,
+      "vida": 6
+    }
+   ],
+  "1": [
+    {
+      "id": "1",
+      "nome": "ANÃO",
+      "def": 4,
+      "atk": 2,
+      "foc": 0,
+      "sab": 2,
+      "int": 0,
+      "des": 0,
+      "cos": 4,
+      "car": -2,
+      "mana": 3,
+      "vida": 3
+    }
+   ],
+  "2": [
+    {
+      "id": "2",
+      "nome": "ELFO",
+      "def": 2,
+      "atk": 3,
+      "foc": 0,
+      "sab": 0,
+      "int": 4,
+      "des": 2,
+      "cos": -2,
+      "car": 0,
+      "mana": 2,
+      "vida": 4
+    }
+   ]
+}

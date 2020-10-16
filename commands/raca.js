@@ -1,39 +1,49 @@
 const Discord = require('discord.js');
 
-module.exports.run = async (client, message, args) =>
-{
-  const classeEmbend = new Discord.MessageEmbed()
-  .setColor('#FF0000')
-  .setTitle('RAÇA')
-  .setDescription('Lembreçe ao escolher sua CLASSE escolha com sabedoria porque será uma vez somente!, use o comando `str classe [CLASSE]` para selecionar sua classe!')
-  .addField('\u200b', '===========================')
-  .addField('HUMANO','Humanos estão por todo o mundo, sendo bons ou mals, entre ladrões e reis!!',false)  
-  .addField('FOR :muscle_tone3: ', '+ 2', true)
-  .addField('INT :writing_hand_tone3: ', '+ 2', true)
-  .addField('COS  :heartbeat: ', '- 1 ', true)
-  .addField('\u200b', '===========================')
-  .addField(':heart: VIDA', '+ 2 de :heart: pontos iniciais!', true)
-  .addField(':crossed_swords: STATUS :shield:', '  :muscle_tone3: + 2 ATK | +1 DEF + :leg_tone3: pontos iniciais! ', true)
-  .addField('\u200b', '----------------------------------------' , '\u200b')
-  .addField('ANÃO','Os anões grandes trabalhadores das minas e super confiaveis!!',false)  
-  .addField('COS :heartbeat: ', '+ 4', true)
-  .addField('SAB :book: ', '+ 2', true)
-  .addField('CAR :speaking_head: ', '- 1', true)
-  .addField('\u200b', '===========================')
-  .addField(':heart: VIDA', '+ 4 de :heart: pontos iniciais!', true)
-  .addField(':crossed_swords: STATUS :shield:', '  :muscle_tone3: + 3 ATK | -1 DEF + :leg_tone3: pontos iniciais! ', true)
-  .addField('\u200b', '----------------------------------------' , '\u200b')
-  .addField('ELFO','Orelhas pontudas são seu charme principal, ou não!!',false)  
-  .addField('INT :writing_hand_tone3: ', '+ 4', true)
-  .addField('DES :leg_tone3: ', '+ 2', true)
-  .addField('COS :heartbeat: ', '- 1', true)
-  .addField('\u200b', '===========================')
-  .addField(':cyclone: MANA', '  4 de :cyclone: pontos iniciais!', true)
-  .addField(':crossed_swords: STATUS :shield:', '  :muscle_tone3: +2 ATK | -1 DEF + :leg_tone3: pontos iniciais! ', true)
-  .addField('\u200b', '===========================')
-  .setFooter('DEV: GUSTAVO CARDOSO', ' ');
+const low = require("lowdb");
+const FileAsync = require('lowdb/adapters/FileSync');
+const adapter = new FileAsync('raca.json');
+const db = low(adapter);
 
-   message.channel.send(classeEmbend);
+module.exports.run = async (client, message, args) => {  
 
-   message.delete().catch(O_o => {});
+  for (let i =0; i<3;  i++){
+       let b =  i.toString();
+    
+      const NOME = db.get(b ).find({id: b}).value().nome;
+      const ATK = db.get(b ).find({id: b}).value().atk;
+      const DEF = db.get(b ).find({id: b}).value().def;
+      const FOR = db.get(b ).find({id: b}).value().foc;
+      const DES = db.get(b ).find({id: b}).value().des;
+      const COS = db.get(b ).find({id: b}).value().cos;
+      const SAB = db.get(b ).find({id: b}).value().sab;
+      const INT = db.get(b ).find({id: b}).value().int;
+      const CAR = db.get(b ).find({id: b}).value().car;
+      const VIDA = db.get(b ).find({id: b}).value().vida;
+      const MANA= db.get(b ).find({id: b}).value().mana;
+
+
+    const CONFIGUIVIDA = " + " + VIDA + " :heart: por level!" + " +  :heartbeat: ";
+    const CONFIGUIMANA = " + "+ MANA + ":cyclone: por level! " + "+ :writing_hand_tone3:";
+    const CONFIGUIATKDEF = "  :crossed_swords: " + ATK + " | " + DEF + " :shield: ";
+
+    const charSet = new Discord.MessageEmbed()
+      .setColor('#0099ff')
+      .setTitle(NOME)
+      .addField('\u200b', '===========================')
+      .addField('FOR :muscle_tone3: ', FOR, true)
+      .addField('DES :leg_tone3: ', DES, true)
+      .addField('SAB :book: ', SAB, true)
+      .addField('CON :heartbeat: ',COS, true)
+      .addField('INT :writing_hand_tone3: ', INT, true)
+      .addField('CAR :speaking_head: ', CAR, true)
+      .addField('\u200b', '===========================')
+      .addField('VIDA', CONFIGUIVIDA, true)
+      .addField('MANA', CONFIGUIMANA,true)
+      .addField('STATUS', CONFIGUIATKDEF, false)
+      .setTimestamp()
+      .setFooter('DEV: GUSTAVO CARDOSO', ' ');
+       message.channel.send(charSet);
+  }
+
 };

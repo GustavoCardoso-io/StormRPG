@@ -1,13 +1,13 @@
-const Discord = require('discord.js');
+let Discord = require('discord.js');
 
-const low = require("lowdb");
-const FileSync = require('lowdb/adapters/FileSync');
-const adapter = new FileSync('banco.json');
-const db = low(adapter);
+let low = require("lowdb");
+let FileAsync = require('lowdb/adapters/FileSync');
+let adapter = new FileAsync('banco.json');
+let db = low(adapter);
 
 module.exports.run = async (client, message, args) =>{
      
-    db.set(message.author.id,[]).write()
+    db.set(message.author.id,[ ]).write()
 
       db.get(message.author.id)
       .push({
