@@ -12,17 +12,17 @@ const db = low(adapter);
        
     let b =  i.toString();
     
-    const NOME = db.get(b ).find({id: b}).value().nome;
-    const ATK = db.get(b ).find({id: b}).value().atk;
-    const DEF = db.get(b ).find({id: b}).value().def;
-    const FOR = db.get(b ).find({id: b}).value().foc;
-    const DES = db.get(b ).find({id: b}).value().des;
-    const COS = db.get(b ).find({id: b}).value().cos;
-    const SAB = db.get(b ).find({id: b}).value().sab;
-    const INT = db.get(b ).find({id: b}).value().int;
-    const CAR = db.get(b ).find({id: b}).value().car;
-    const VIDA = db.get(b ).find({id: b}).value().vida;
-    const MANA= db.get(b ).find({id: b}).value().mana;
+    const NOME = db.get(b).find({id: b}).value().nome;
+    const ATK = db.get(b).find({id: b}).value().atk;
+    const DEF = db.get(b).find({id: b}).value().def;
+    const FOR = db.get(b).find({id: b}).value().foc;
+    const DES = db.get(b).find({id: b}).value().des;
+    const COS = db.get(b).find({id: b}).value().cos;
+    const SAB = db.get(b).find({id: b}).value().sab;
+    const INT = db.get(b).find({id: b}).value().int;
+    const CAR = db.get(b).find({id: b}).value().car;
+    const VIDA = db.get(b).find({id: b}).value().vida;
+    const MANA= db.get(b).find({id: b}).value().mana;
 
     const CONFIGUIVIDA = " + " + VIDA + " :heart: por level!" + " +  :heartbeat: ";
     const CONFIGUIMANA = " + "+ MANA + ":cyclone: por level! " + "+ :writing_hand_tone3:";

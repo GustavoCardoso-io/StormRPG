@@ -1,0 +1,16 @@
+{
+  "0": 
+  [
+    {
+      "id": "0",
+      "nome": "TEXUGO RAIVOSO",
+      "descricao": "Fumador de erva!",
+      "def": 10,
+      "atk": 4,
+      "vida": 9,
+      "level": 1,
+      "xp": 10,
+      "coin": 5
+    }
+  ]
+}

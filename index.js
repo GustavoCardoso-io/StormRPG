@@ -21,7 +21,7 @@ client.on('message', message =>
   let args = message.content
       .trim().slice(config.prefix.length)
       .split(/ +/g);
-
+      
   console.log(args);
 
   let arg1 = args.slice(0).shift();
