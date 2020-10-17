@@ -1,23 +1,20 @@
 const Discord = require('discord.js');
 
-const low = require("lowdb");
-const FileAsync = require('lowdb/adapters/FileSync');
-const adapter = new FileAsync('raca.json');
-const db = low(adapter);
-const adapterPlayer = new FileAsync('banco.json');
-const db2 = low(adapterPlayer);
-
-
-const b = "1"
+const b = "0"
 
 module.exports.run = async (client, message, args) =>
 {
+const low = require("lowdb");
+const FileSync = require('lowdb/adapters/FileSync');
+const adapter = new FileSync('origem.json');
+const db = low(adapter);
+const adapterPlayer = new FileSync('banco.json');
+const db2 = low(adapterPlayer);
 
-
-      const NOME = db.get(b ).find({id: b}).value().nome;
-      const ATK = db.get(b ).find({id: b}).value().atk;
-      const DEF = db.get(b ).find({id: b}).value().def;
-      const FOR = db.get(b ).find({id: b}).value().foc;
+  const NOME = db.get(b ).find({id: b}).value().nome;
+  const ATK = db.get(b ).find({id: b}).value().atk;
+  const DEF = db.get(b ).find({id: b}).value().def;
+  const FOR = db.get(b ).find({id: b}).value().foc;
       const DES = db.get(b ).find({id: b}).value().des;
       const COS = db.get(b ).find({id: b}).value().cos;
       const SAB = db.get(b ).find({id: b}).value().sab;
@@ -26,12 +23,13 @@ module.exports.run = async (client, message, args) =>
       const VIDA = db.get(b ).find({id: b}).value().vida;
       const MANA= db.get(b ).find({id: b}).value().mana;
 
+
     const VIDAMAXP = db2.get(message.author.id).find({id:message.author.id}).value().maxVida;
     const DEFP = db2.get(message.author.id).find({id:message.author.id}).value().def;
     const ATKP = db2.get(message.author.id).find({id:message.author.id}).value().atk;
     const MANAP = db2.get(message.author.id).find({id:message.author.id}).value().mana;
     const MAXMANAP = db2.get(message.author.id).find({id:message.author.id}).value().maxMana;
-    const RACAP = db2.get(message.author.id).find({id:message.author.id}).value().raca;
+    const ORIGEM = db2.get(message.author.id).find({id:message.author.id}).value().origem;
     const FORP = db2.get(message.author.id).find({id:message.author.id}).value().foc;
     const DESP = db2.get(message.author.id).find({id:message.author.id}).value().des;
     const COSP = db2.get(message.author.id).find({id:message.author.id}).value().cos;
@@ -39,9 +37,9 @@ module.exports.run = async (client, message, args) =>
     const SABP = db2.get(message.author.id).find({id:message.author.id}).value().sab;
     const CARP = db2.get(message.author.id).find({id:message.author.id}).value().car;
   
-  if (RACAP === "default")
+  if (ORIGEM === "default")
 {
-  let NEWRACA = NOME;
+  let NEWORIGEM = NOME;
   let NEWVIDA = VIDA + VIDAMAXP;
   let NEWMANA = MANA + MAXMANAP;
   let NEWDEF = DEF + DEFP;
@@ -53,8 +51,8 @@ module.exports.run = async (client, message, args) =>
   let NEWSAB = SAB + SABP;
   let NEWCAR = CAR + CARP;
 
-  db2.get(message.author.id).find({id:message.author.id}).assign({raca: NEWRACA}).write()
-  db2.get(message.author.id).find({id:message.author.id}).assign({maxVida: NEWVIDA}).write()
+
+db2.get(message.author.id).find({id:message.author.id}).assign({maxVida: NEWVIDA}).write()
   db2.get(message.author.id).find({id:message.author.id}).assign({vidaAtual: NEWVIDA}).write()
   db2.get(message.author.id).find({id:message.author.id}).assign({mana: NEWMANA}).write()
   db2.get(message.author.id).find({id:message.author.id}).assign({maxMana: NEWMANA}).write()
@@ -66,10 +64,12 @@ module.exports.run = async (client, message, args) =>
   db2.get(message.author.id).find({id:message.author.id}).assign({int: NEWINT}).write()
   db2.get(message.author.id).find({id:message.author.id}).assign({sab: NEWSAB}).write()
   db2.get(message.author.id).find({id:message.author.id}).assign({car: NEWCAR}).write()
+  db2.get(message.author.id).find({id:message.author.id}).assign({origem: NEWORIGEM}).write()
   
-  return message.channel.send("Você selecionou a classe: "+ NEWRACA + ". Uma boa aventura! ");
-}
- return message.channel.send("Você ja tem uma classe selecionada. Caso queira resetar use `str start`  !");
+  return message.channel.send("Você selecionou a ORIGEM: "+ NEWORIGEM + ". Uma boa aventura! ");
 
+}
+ return message.channel.send("Você ja tem uma ORIGEM selecionada. Caso queira resetar use `str start`  !");
  message.delete().catch(O_o => {});
+
 };  

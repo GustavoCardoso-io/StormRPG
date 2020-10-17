@@ -1,0 +1,50 @@
+{
+   "0": [
+    {
+      "id": "0",
+      "nome": "DEVOTO",
+      "def": 0,
+      "atk": 0,
+      "foc": 0,
+      "sab": 3,
+      "int": 0,
+      "des": 0,
+      "cos": 0,
+      "car": 0,
+      "mana": 0,
+      "vida": 0
+    }
+   ],
+   "1": [
+    {
+      "id": "1",
+      "nome": "ADESTRADOR",
+      "def": 0,
+      "atk": 0,
+      "foc": 0,
+      "sab": 0,
+      "int": 0,
+      "des": 1,
+      "cos": 0,
+      "car": 1,
+      "mana": 0,
+      "vida": 0
+    }
+   ],
+   "2": [
+    {
+      "id": "2",
+      "nome": "ARTISTA",
+      "def": 0,
+      "atk": 0,
+      "foc": 0,
+      "sab": 0,
+      "int": 0,
+      "des": 0,
+      "cos": 0,
+      "car": 2,
+      "mana": 0,
+      "vida": 0
+    }
+   ]
+}

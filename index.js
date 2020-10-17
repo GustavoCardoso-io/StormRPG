@@ -11,23 +11,76 @@ app.get("/", (request, response) => {
   response.sendStatus(200);
 });
 
-client.on('message', message => {
-     if (message.author.bot) return;
-     if (message.channel.type == 'dm') return;
-     if (!message.content.toLowerCase().startsWith(config.prefix.toLowerCase())) return;
-     if (message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith(`<@${client.user.id}>`)) return;
+client.on('message', message => 
+{
+     
+  if (message.author.bot) return;
+  if (message.channel.type == 'dm') return;
+  if (!message.content.toLowerCase().startsWith(config.prefix.toLowerCase())) return;
+  if (message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith(`<@${client.user.id}>`)) return;
 
-    let args = message.content
-        .trim().slice(config.prefix.length)
-        .split(/ +/g);
-    let command = args.shift().toLowerCase();
+  let args = message.content
+      .trim().slice(config.prefix.length)
+      .split(/ +/g);
 
-    try {
-        let commandFile = require(`./commands/${command}.js`)
-        commandFile.run(client, message, args);
+  console.log(args);
 
-    } catch (err) {
+  let arg1 = args.slice(0).shift();
+ 
+  let arg2 = args.slice(1).join(' ');
+  
+  arg1 = arg1.toLowerCase();
+  arg2 = arg2.toLowerCase();
+  let user = getUserFromMention(args[1]);
+
+  try
+  { 
+    if(!user)
+      {
+        if(arg2 === '' )
+        {
+
+          let command = arg1;
+          let commandFile = require(`./commands/${command}.js`)
+          commandFile.run(client, message, args);
+        }
+        else
+        {
+          let command2 = arg2
+          let command = arg1;
+          let commandFile = require(`./commands/${command}/${command2}.js`);
+          commandFile.run(client, message, args);
+        }
+      }
+      else
+        {
+          let command = arg1;
+          let commandFile = require(`./commands/${command}.js`)
+          commandFile.run(client, message, args);
+        }
+     
+
+  }
+  catch(err)
+  {
     console.error('Erro:' + err);
+  }
+
+  function getUserFromMention(mention)
+  {
+    if (!mention) return;
+
+    if (mention.startsWith('<@') && mention.endsWith('>'))
+    {
+      mention = mention.slice(2, -1);
+
+      if (mention.startsWith('!'))
+      {
+        mention = mention.slice(1);
+      } 
+
+      return client.users.cache.get(mention);
+    }
   }
 });
 
