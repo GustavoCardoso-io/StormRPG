@@ -3,7 +3,6 @@ let app = express();
 let Discord = require("discord.js"); //Conexão com a livraria Discord.js
 let client = new Discord.Client(); //Criação de um novo Client
 let config = require("./config.json"); //Pegando o prefixo do bot para respostas de comandoslet 
-
 app.get("/", (request, response) => {
   let ping = new Date();
   ping.setHours(ping.getHours() - 3);
@@ -58,8 +57,6 @@ client.on('message', message =>
           let commandFile = require(`./commands/${command}.js`)
           commandFile.run(client, message, args);
         }
-     
-
   }
   catch(err)
   {
