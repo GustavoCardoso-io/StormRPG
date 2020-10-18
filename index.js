@@ -38,7 +38,6 @@ client.on('message', message =>
       {
         if(arg2 === '' )
         {
-
           let command = arg1;
           let commandFile = require(`./commands/${command}.js`)
           commandFile.run(client, message, args);

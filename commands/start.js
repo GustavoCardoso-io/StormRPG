@@ -9,8 +9,8 @@ let adapterp = new FileAsync('invplayers.json');
 let inv = low(adapterp);
 
 module.exports.run = async (client, message, args) =>{
-     
-  db.set(message.author.id,[ ]).write()
+
+    db.set(message.author.id, []).write();
 
     db.get(message.author.id)
     .push({

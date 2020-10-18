@@ -25,28 +25,28 @@
       "origem": "default"
     }
   ],
-  "402274860119752713": [
+  "383812290572451840": [
     {
-      "id": "402274860119752713",
-      "nick": "DJKings",
-      "avatar": "https://cdn.discordapp.com/avatars/402274860119752713/c13077809b0de4e21923bf2b038a91ae.webp",
+      "id": "383812290572451840",
+      "nick": "uSt",
+      "avatar": "https://cdn.discordapp.com/avatars/383812290572451840/c9427f958a03c78bb366ff4b0cb80d1e.webp",
       "level": 1,
       "xpatual": 0,
       "xpMaxLevel": 1000,
-      "vidaAtual": 4,
-      "coin": 100,
-      "maxVida": 4,
-      "mana": 2,
-      "maxMana": 2,
-      "def": 2,
-      "atk": 3,
+      "coin": 200,
+      "vidaAtual": 0,
+      "maxVida": 0,
+      "mana": 0,
+      "maxMana": 0,
+      "def": 10,
+      "atk": 1,
       "foc": 0,
       "sab": 0,
-      "int": 4,
-      "des": 2,
-      "cos": -2,
+      "int": 0,
+      "des": 0,
+      "cos": 0,
       "car": 0,
-      "raca": "ELFO",
+      "raca": "default",
       "classe": "default",
       "origem": "default"
     }
