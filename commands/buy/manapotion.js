@@ -14,8 +14,8 @@ module.exports.run = async (client, message, args) => {
 
   let item =
   {
-    id: 1,
-    nome: ":drop_of_blood: POÇÃO DE CURA",
+    id: 2,
+    nome: ":droplet: POÇÃO DE MANA",
     quantidade: 1
   }
 
@@ -25,17 +25,22 @@ module.exports.run = async (client, message, args) => {
     _quant = 0;
   }
 
-  if (typeof items[0] === 'undefined') {
+  if (typeof items[0] === 'undefined')
+  {
     inv.get(_IDplayer).push(item).write();
   }
 
   _quant = parseInt(args[2]);
 
-  for (i = 0; i < items.length; i++) {
-    if (items[i].id === 1) {
+  for (i = 0; i < items.length; i++)
+  {
+
+    if (items[i].id === 2)
+    {
+      _itemIsExist = true;
       if (_quant === 0)
       {
-        _newQuantidade = items[i].quantidade += _quant;
+        _newQuantidade = items[i].quantidade += _newQuantidade;
 
         console.log(_newQuantidade);
         inv.get(_IDplayer).find({ id: item.id }).assign({ quantidade: _newQuantidade }).write();
@@ -50,8 +55,10 @@ module.exports.run = async (client, message, args) => {
     {
       _itemIsExist = false;
     }
+
+
   }
-  
+
   if(_itemIsExist === false)
   {
      inv.get(_IDplayer).push(item).write();

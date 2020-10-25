@@ -20,7 +20,9 @@ module.exports.run = async (client, message, args) =>
   const MANAP = db2.get(message.author.id).find({id:message.author.id}).value().mana;
   const MAXMANAP = db2.get(message.author.id).find({id:message.author.id}).value().maxMana;
   const RACAP = db2.get(message.author.id).find({id:message.author.id}).value().classe;
+ 
 
+   console.log(args.slice(1).join(''));
   if (RACAP === "default")
   {
     let NEWRACA = NOME;

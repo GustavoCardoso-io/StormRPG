@@ -1,20 +1,29 @@
-  const Discord = require('discord.js');
+const Discord = require('discord.js');
 
-  module.exports.run = async (client, message, args) => {  
+module.exports.run = async (client, message, args) => {
+
+  const low = require("lowdb");
+  const FileAsync = require('lowdb/adapters/FileSync')
+  const inventory = new FileAsync('invplayers.json');
+  const inv = low(inventory);
+
+  let _IDPlayer = message.author.id;
+  let items = inv.get(_IDPlayer).push().value({});
+
+   let charSet = new Discord.MessageEmbed();
+
+  for (i = 0; i < items.length; i++)
+  {
+    charSet
+      .setColor('#7B241C')
+      .setTitle('INVENTARIO\n')
+      .addField('***'+ items[i].nome + ' ***', '**' + items[i].quantidade + '**',true)
+      .setTimestamp()
+      .setFooter('DEV: GUSTAVO CARDOSO', ' ');
+
+  }
   
-    const low = require("lowdb");
-    const FileAsync = require('lowdb/adapters/FileSync') 
-    const inventory = new FileAsync('invplayers.json');
-    const inv = low(inventory);
+  message.channel.send(charSet);
 
-    let IDPLAYER =  message.author.id;
-
-    let items = inv.get(IDPLAYER).push({}).value();
-
-    for(i = 0; i < items.length -1 ; i++)
-    {
-        message.channel.send("Item: " + items[i].name + "Quantidade: " + items[i].quantidade );  
-    }
-
-    //console.log(items);
-  };
+  //console.log(items);
+};

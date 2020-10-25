@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
   const db = low(adapter);
 
   let player = db.get(message.author.id).push({}).value({});
-  
+
   if (args) {
     let user = getUserFromMention(args[1]);
 

@@ -50,5 +50,31 @@
       "classe": "default",
       "origem": "default"
     }
+  ],
+  "402274860119752713": [
+    {
+      "id": "402274860119752713",
+      "nick": "DJKings",
+      "avatar": "https://cdn.discordapp.com/avatars/402274860119752713/c13077809b0de4e21923bf2b038a91ae.webp",
+      "level": 1,
+      "xpatual": 0,
+      "xpMaxLevel": 1000,
+      "coin": 200,
+      "vidaAtual": 0,
+      "maxVida": 0,
+      "mana": 0,
+      "maxMana": 0,
+      "def": 10,
+      "atk": 1,
+      "foc": 0,
+      "sab": 0,
+      "int": 0,
+      "des": 0,
+      "cos": 0,
+      "car": 0,
+      "raca": "default",
+      "classe": "default",
+      "origem": "default"
+    }
   ]
 }
