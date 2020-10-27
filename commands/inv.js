@@ -14,6 +14,7 @@ module.exports.run = async (client, message, args) => {
 
   for (i = 0; i < items.length; i++)
   {
+    console.log(items[i].nome);
     charSet
       .setColor('#7B241C')
       .setTitle('INVENTARIO\n')

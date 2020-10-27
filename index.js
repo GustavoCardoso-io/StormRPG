@@ -40,11 +40,12 @@ client.on('message', message => {
   console.log(arg2 + "   " + arg1);
   try {
     if (!user) {
-      if (arg2 === 'vazio')
+      if (arg2 === 'vazio'|| arg1 === 'buy')
       {
         let command = arg1;
         let commandFile = require(`./commands/${command}.js`)
         commandFile.run(client, message, args);
+        return;
       }
       else
       {

@@ -1,20 +1,22 @@
 {
-  "638065252046733351": [
+  "lifepotion": [
     {
       "id": 0,
       "nome": ":drop_of_blood: POÇÃO DE CURA",
       "buyvalor": 10,
       "sellvalor": 6,
       "maxliferestore": 5,
-      "quantidade": 11
-    },
+      "quantidade": 1
+    }
+  ],
+  "manapotion": [
     {
       "id": 1,
       "nome": ":droplet:  POÇÃO DE MANA",
       "buyvalor": 10,
       "sellvalor": 6,
       "maxliferestore": 5,
-      "quantidade": 1
+       "quantidade": 1
     }
   ]
 }
