@@ -78,7 +78,6 @@ module.exports.run = async (client, message, args) => {
             dbChar.get(message.author.id).find({ id: message.author.id }).assign({ coin: COINP }).write()
             dbChar.get(message.author.id).find({ id: message.author.id }).assign({ vidaAtual: VIDAP }).write()
 
-
             return "O jogador **" + NICK + "  ** e ganhou: ** " + XPC + " ** XP e **" + COINC + "  ** coin  " + "  e perdeu:  ** " + _VIDAPERDIDA + " ** vida.";
           }
 

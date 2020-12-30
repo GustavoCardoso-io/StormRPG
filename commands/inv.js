@@ -17,7 +17,7 @@ module.exports.run = async (client, message, args) => {
     console.log(items[i].nome);
     charSet
       .setColor('#7B241C')
-      .setTitle('INVENTARIO\n')
+      .setTitle('INVENTARIO '+ message.author.username +'.\n' )
       .addField('***'+ items[i].nome + ' ***', '**' + items[i].quantidade + '**',true)
       .setTimestamp()
       .setFooter('DEV: GUSTAVO CARDOSO', ' ');
