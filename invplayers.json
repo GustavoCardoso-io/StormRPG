@@ -11,8 +11,8 @@
     {
       "id": 1,
       "nome": ":droplet:  POÇÃO DE MANA",
-      "buyvalor": 10,
-      "sellvalor": 6,
+      "buyvalor": 1,
+      "sellvalor": 1,
       "maxliferestore": 5,
       "quantidade": 1
     }

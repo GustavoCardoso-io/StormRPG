@@ -16,7 +16,7 @@ module.exports.run = async (client, message, args) => {
 
     const CONFIGUIVIDA = " + " + classes[0].vida + " :heart: por level!" + " +  :heartbeat: ";
     const CONFIGUIMANA = " + " + classes[0].mana + ":cyclone: por level! " + "+ :writing_hand_tone3:";
-
+    
     charSet
       .setColor('#7B241C')
       .setTitle('CLASSES')
@@ -26,7 +26,6 @@ module.exports.run = async (client, message, args) => {
       .addField('MANA', CONFIGUIMANA, true)
       .setTimestamp()
       .setFooter('DEV: GUSTAVO CARDOSO', ' ');
-
   }
   message.author.send(charSet);
 };

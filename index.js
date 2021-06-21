@@ -3,11 +3,14 @@ let app = express();
 let Discord = require("discord.js"); //Conexão com a livraria Discord.js
 let client = new Discord.Client(); //Criação de um novo Client
 let config = require("./config.json"); //Pegando o prefixo do bot para respostas de comandoslet 
-app.get("/", (request, response) => {
+app.get("/", (request, response) =>
+{
+
   let ping = new Date();
   ping.setHours(ping.getHours() - 3);
   console.log(`Ping recebido às ${ping.getUTCHours()}:${ping.getUTCMinutes()}:${ping.getUTCSeconds()}`);
   response.sendStatus(200);
+  
 });
 
 client.on('message', message => {
