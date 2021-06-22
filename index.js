@@ -6,19 +6,25 @@ let config = require("./config.json"); //Pegando o prefixo do bot para respostas
 app.get("/", (request, response) =>
 {
 
+
+
   let ping = new Date();
   ping.setHours(ping.getHours() - 3);
   console.log(`Ping recebido às ${ping.getUTCHours()}:${ping.getUTCMinutes()}:${ping.getUTCSeconds()}`);
   response.sendStatus(200);
-  
 });
 
 client.on('message', message => {
 
   if (message.author.bot) return;
+  
   if (message.channel.type == 'dm') return;
+
   if (!message.content.toLowerCase().startsWith(config.prefix.toLowerCase())) return;
-  if (message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith(`<@${client.user.id}>`)) return;
+
+  if (message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith
+  
+  (`<@${client.user.id}>`)) return;
 
   let args = message.content
     .trim().slice(config.prefix.length)

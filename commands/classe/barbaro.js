@@ -1,28 +1,29 @@
 const Discord = require('discord.js');
 
-const b = "0"
+const b = "0";
 
 module.exports.run = async (client, message, args) =>
 {
   const low = require("lowdb");
   const FileSync = require('lowdb/adapters/FileSync');
-  const adapter = new FileSync('classe.json');
-  const db = low(adapter);
+  const classe = new FileSync('classe.json');
+  const db = low(classe);
   const adapterPlayer = new FileSync('banco.json');
   const db2 = low(adapterPlayer);
+
+   db.read();
+
+  console.log( db);
 
   const NOME = db.get(b ).find({id: b}).value().nome;
   const VIDA = db.get(b ).find({id: b}).value().vida;
   const MANA= db.get(b ).find({id: b}).value().mana;
-  const CLASSE = db.get(b).find({id: b}).value().nome
-
+  const CLASSE = db.get(b).find({id: b}).value().nome;
   const VIDAMAXP = db2.get(message.author.id).find({id:message.author.id}).value().maxVida;
   const MANAP = db2.get(message.author.id).find({id:message.author.id}).value().mana;
   const MAXMANAP = db2.get(message.author.id).find({id:message.author.id}).value().maxMana;
   const RACAP = db2.get(message.author.id).find({id:message.author.id}).value().classe;
- 
 
-   console.log(args.slice(1).join(''));
   if (RACAP === "default")
   {
     let NEWRACA = NOME;

@@ -1,20 +1,3 @@
 {
-  "638065252046733351": [
-    {
-      "id": 0,
-      "nome": ":drop_of_blood: POÇÃO DE CURA",
-      "buyvalor": 10,
-      "sellvalor": 6,
-      "maxliferestore": 5,
-      "quantidade": 11
-    },
-    {
-      "id": 1,
-      "nome": ":droplet:  POÇÃO DE MANA",
-      "buyvalor": 1,
-      "sellvalor": 1,
-      "maxliferestore": 5,
-      "quantidade": 1
-    }
-  ]
+  "638065252046733351": []
 }

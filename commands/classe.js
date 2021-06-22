@@ -8,8 +8,29 @@ module.exports.run = async (client, message, args) => {
   const cDB = low(adapter);
 
   const charSet = new Discord.MessageEmbed();
+  
+ /* client.on('message', message =>
+  {
 
-  for (i = 0; i < 3; i++) {
+  if (message.author.bot) return;
+  
+  if (message.channel.type == 'dm') return;
+
+  if (!message.content.toLowerCase().startsWith(config.prefix.toLowerCase())) return;
+
+  if (message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith
+  
+  (`<@${client.user.id}>`)) return;
+  });
+*/
+  let args = message.content
+    .trim().slice(config.prefix.length)
+    .split(/ +/g);
+
+  console.log(args);
+  
+  for (i = 0; i < 3; i++)
+  {
     let b = i.toString();
 
     let classes = cDB.get(b).push({}).value({});
