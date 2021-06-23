@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args) => {
   const low = require("lowdb");
   const FileAsync = require('lowdb/adapters/FileSync');
   const adapter = new FileAsync('classe.json');
-  const cDB = low(adapter);
+  const classeDB = low(adapter);
 
   const charSet = new Discord.MessageEmbed();
   
@@ -23,17 +23,19 @@ module.exports.run = async (client, message, args) => {
   (`<@${client.user.id}>`)) return;
   });
 */
-  let args = message.content
+  let args2 = message.content
     .trim().slice(config.prefix.length)
     .split(/ +/g);
 
-  console.log(args);
+  let c =  args2[0];
+  
+  console.log(c);
   
   for (i = 0; i < 3; i++)
   {
     let b = i.toString();
 
-    let classes = cDB.get(b).push({}).value({});
+    let classes = classeDB.get(b).push({}).value({});
 
     const CONFIGUIVIDA = " + " + classes[0].vida + " :heart: por level!" + " +  :heartbeat: ";
     const CONFIGUIMANA = " + " + classes[0].mana + ":cyclone: por level! " + "+ :writing_hand_tone3:";

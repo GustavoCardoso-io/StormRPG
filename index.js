@@ -32,7 +32,7 @@ client.on('message', message => {
 
   let user = getUserFromMention(args[1]);
 
-  console.log(args);
+  //console.log(args);
 
   let arg1 = args.slice(0).shift();
 
@@ -48,7 +48,8 @@ client.on('message', message => {
 
   console.log(arg2 + "   " + arg1);
   try {
-    if (!user) {
+    if (!user) 
+    {
       if (arg2 === 'vazio'|| arg1 === 'buy')
       {
         let command = arg1;
@@ -56,7 +57,8 @@ client.on('message', message => {
         commandFile.run(client, message, args);
         return;
       }
-      else
+    }
+   /*   else
       {
         let command2 = arg2
         let command = arg1;
@@ -69,13 +71,14 @@ client.on('message', message => {
       let command = arg1;
       let commandFile = require(`./commands/${command}.js`)
       commandFile.run(client, message, args);
-    }
-  }
+    }*/
+    
+}
   catch (err)
   {
     console.error('Erro:' + err);
   }
-
+  
   function getUserFromMention(mention) {
     if (!mention) return;
 
